@@ -110,7 +110,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
             databaseReference.child(email.replace(".", "")).setValue(user);
             clearFields();
             Toast.makeText(getApplicationContext(), "Registered", Toast.LENGTH_SHORT).show();
-            startActivity(new Intent(this, HomeActivity.class));
+            startActivity(new Intent(this, SetUpNewPassActivity.class));
         }
         else{
             Toast.makeText(getApplicationContext(), "Wrong Password!! Please Check your E-mail.", Toast.LENGTH_SHORT).show();

@@ -48,6 +48,8 @@ public class SetUpNewPassActivity extends AppCompatActivity {
                             for(DataSnapshot dataSnapshot : snapshot.getChildren()){
                                 SignUpData user = dataSnapshot.getValue(SignUpData.class);
                                 if(user!=null){user.set_password(newPasswordText.getText().toString());}
+                                Toast.makeText(getApplicationContext(), "Password changed!", Toast.LENGTH_SHORT).show();
+                                startActivity(new Intent(SetUpNewPassActivity.this, HomeActivity.class));
                             }
                         }
 
@@ -59,7 +61,6 @@ public class SetUpNewPassActivity extends AppCompatActivity {
                 else{
                     newPasswordText2.setError("Passwords do not match!");
                     newPasswordText2.requestFocus();
-                    return;
                 }
             }
         });
